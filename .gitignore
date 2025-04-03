@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp
+.pnp.js
+
+# Build
+dist/
+coverage/
+build/
+
+# Environment and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+config.json
+
+# IDE and Editor folders
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
