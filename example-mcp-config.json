@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "smartsheet": {
+      "command": "node",
+      "args": ["./dist/index.js"],
+      "env": {
+        "SMARTSHEET_API_TOKEN": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}

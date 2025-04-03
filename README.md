@@ -43,16 +43,36 @@ A Model Context Protocol (MCP) server for integrating with the Smartsheet API. T
 SMARTSHEET_API_TOKEN=your_api_token npm start
 ```
 
-### Running the server with Claude
+### MCP Configuration
 
-Create a configuration file for Claude (for example, `claude-config.json`):
+An example MCP configuration is provided in `example-mcp-config.json`:
 
 ```json
 {
   "mcpServers": {
     "smartsheet": {
       "command": "node",
-      "args": ["path/to/smartsheet-mcp-server/dist/index.js"],
+      "args": ["./dist/index.js"],
+      "env": {
+        "SMARTSHEET_API_TOKEN": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+This configuration can be used with any MCP-compatible client.
+
+### Running the server with Claude
+
+An example configuration file for Claude is provided in `example-claude-config.json`:
+
+```json
+{
+  "mcpServers": {
+    "smartsheet": {
+      "command": "node",
+      "args": ["/path/to/mcp-smartsheet/dist/index.js"],
       "env": {
         "SMARTSHEET_API_TOKEN": "YOUR_SMARTSHEET_API_TOKEN"
       }
@@ -60,6 +80,11 @@ Create a configuration file for Claude (for example, `claude-config.json`):
   }
 }
 ```
+
+1. Copy `example-claude-config.json` to a location of your choice
+2. Replace `/path/to/mcp-smartsheet` with the actual path to your installation
+3. Replace `YOUR_SMARTSHEET_API_TOKEN` with your actual Smartsheet API token
+4. Configure Claude to use this configuration file
 
 ## How to Get a Smartsheet API Token
 
